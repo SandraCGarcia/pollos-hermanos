@@ -1,0 +1,267 @@
+@import 'reset.scss', "font-awesome", 'helpers.scss', './../../node_modules/bootstrap/scss/bootstrap-grid';
+
+/* SOCIALS NETWORK */
+.aside {display:none;}
+.share-container > .share-item {font-size:20px;}
+.share-container {
+    display: flex;
+    padding: 10px;
+    position: fixed;
+    bottom:0;
+    left: 0;
+    background: #000;
+    z-index: 900;
+    width:100%;
+    justify-content: space-around;
+    padding-left: 20px;
+    align-items: center;
+    opacity:0;
+    visibility:hidden;
+    transition: opacity 0.5s, visibility 0.5s;
+}
+.top-logo {
+    padding-right: 0;
+    border-right: 1px solid gray;
+    width: 90px;
+    img {
+        transform: translateY(8%);
+    }
+}
+.share-item{
+    background: transparent;
+    color:#fff;
+    width: 60px;
+}
+.is-visible {
+    opacity:1;
+    visibility:visible;
+    z-index: 1000;
+}
+
+.img-header{
+    position: relative;
+}
+.img-cartel{
+    position: absolute;
+    top: 26px;
+    left: 75px;
+    z-index: 10;
+    width: 221px;
+}
+.jumped{
+    animation: jump 1.5s ease 0s normal;
+    animation-delay: 2.5s;
+}
+.img-plato{
+position: absolute;
+top: 250px;
+width: 54%;
+left: 50%;
+transform: translate(-50%, 0);
+animation:  upPlate 1s ease-in-out forwards;  
+visibility: hidden;
+}
+.img-logo{
+    position: absolute;
+    z-index: 10;
+    opacity: .6;
+    width: 18%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20px;
+}
+.img-pollo{
+    width: 33%;
+    position: absolute;
+    top: 321px;
+    left: 50%;
+    transform: translateX(-50%) rotate(19deg);
+    z-index: 100;
+    visibility: hidden;
+    opacity: 0;
+    animation: upChicken 1s ease-in-out forwards;  
+    animation-delay: 1s;
+}
+.card{
+    max-width: 400px;
+    background-color: #fff;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 7px 7px rgba(0, 0, 0, 0.15);
+    margin: 40px 20px;
+
+    &__title{
+        text-align: center;
+        text-transform: uppercase;
+        color: #606b54;
+        font-family: 'Oswald', sans-serif;
+        font-size: 20px;
+        margin: 50px;
+
+
+    }
+    &__img{
+        height: 255px;
+        overflow: hidden;
+        display: flex;
+        border-radius: 5px;
+        justify-content: center;
+    }
+    &__description{
+        margin: 30px 50px;
+        color: #606b54;
+    }
+}
+.section-products{
+    background-color: #ece9d9;
+    display: flex;
+    justify-content: space-around;
+    padding: 100px 0;
+    margin-top: -5px;
+}
+.center-text{
+width: 500px;
+margin: 50px auto;
+text-align: center;
+}
+
+
+
+/* ---- FOOTER ---- */
+
+.footer{
+    display: block;
+    background-color: #000;
+    font-family: $roboto;
+    position: relative;
+    z-index: 13;
+    // margin-top: 90px; 
+    .footer-credits{
+        padding: 50px 25px 50px 25px;
+        text-align: center;
+        .footer-title{
+            font-size: 18px;
+            letter-spacing: 2.8px;
+            color:#fff;
+            text-transform: uppercase;
+            font-weight: normal;
+            position: relative;
+            line-height: 1.83;
+            letter-spacing: 6px;
+            // &:after {
+            //     content: "x";
+            //     position: absolute;
+            //     top: -45px;
+            //     left: 50%;
+            // }
+            // &:before {
+            //     content: "x";
+            //     position: absolute;
+            //     bottom: -94px;
+            //     left: 50%;  
+            // }
+        }
+        .brand{
+            position: relative;
+            margin-right: 0;
+            width: 132px;
+        }
+        .brand__anniversary {
+            transform: translateY(4px);
+        }
+    }
+}
+
+@media (min-width: 768px){
+    /* ---- SOCIALS NETWORK ---- */
+    .share-container {display:none;}
+    .aside {
+        display: block;
+        position: fixed;
+        top: 50%;
+        left: 0;
+        background: #000;
+        padding: 9px;
+        z-index: 4;
+        border-radius: 0 15px 15px 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.5s, visibility 0.5s;
+    }
+    .aside-logo {
+        padding-bottom: 5px;
+        border-bottom: 1px solid #fff;
+        margin-bottom: 15px;
+    }
+    .aside-rrss {
+        width: 25px;
+        height: 25px;
+        line-height: 25px;
+        background: #fff;
+        color: #000;
+        margin: 10px 0;
+        border-radius: 50%;
+        font-size: 14px;
+        text-align: center;
+        -webkit-transition: background .7s ease-out;
+        -moz-transition: background .7s ease-out;
+        -o-transition: background .7s ease-out;
+        transition: background .7s ease-out;
+        &:hover {
+            color: #FFF;
+            background: rgb(27, 180, 155);
+            text-decoration: none;
+        }
+    }
+    .is-visible {
+        opacity:1;
+        visibility:visible;
+        z-index: 1000;
+    }
+}
+
+
+@keyframes upPlate{
+    0%{
+        visibility: hidden;
+        transform: translate(-50%, 270px);
+    }
+
+    100%{
+        visibility: visible;
+        transform: translate(-50%, 0);
+    }
+}
+
+@keyframes upChicken{
+    0%{
+        visibility: hidden;
+        left: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        visibility: visible;
+        left: 50%;
+        opacity: 1;
+    }
+}
+// @keyframes jump {
+//     0%{transform: translateY(0);}
+//     20%{transform: translateY(0);}
+//     40%{transform: translateY(-20px);}
+//     50%{transform: translateY(0);}
+//     60%{transform: translateY(-10px);}
+//     80%{transform: translateY(0);}
+//     100%{transform: translateY(0);}
+// }
+@keyframes jump {
+    0%{transform: scale(1);}
+    20%{transform: scale(1);}
+    40%{transform: scale(1.2);}
+    50%{transform: scale(1);}
+    60%{transform: scale(1.2);}
+    80%{transform: scale(1);}
+    100%{transform: scale(1);}
+}
